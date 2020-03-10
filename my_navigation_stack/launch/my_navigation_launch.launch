@@ -1,23 +1,23 @@
 <launch>
     <!-- Arguments -->
     <arg name="model" default="burger"/>
-    <arg name="map_file" default="/home/joan/catkin_ws/maps/tb3_house.map.yaml"/>
+    <arg name="map_file" default="~/catkin_ws/maps/tb3_house.map.yaml"/>
     <arg name="open_rviz" default="true"/>
-    <arg name="rviz_config" default="/home/joan/catkin_ws/src/my_navigation_stack/config/my_config.rviz"/>
+    <arg name="rviz_config" default="~/catkin_ws/src/my_navigation_stack/config/my_config.rviz"/>
 
     <!-- Turtlebot3 -->
-    <include file="/home/joan/catkin_ws/src/turtlebot3/turtlebot3_bringup/launch/turtlebot3_remote.launch">
+    <include file="~/catkin_ws/src/turtlebot3/turtlebot3_bringup/launch/turtlebot3_remote.launch">
         <arg name="model" value="$(arg model)"/>
     </include>
 
     <!-- Map Server -->
-    <include file="/home/joan/catkin_ws/src/provide_map/launch/provide_map.launch"/>
+    <include file="~/catkin_ws/src/provide_map/launch/provide_map.launch"/>
 
     <!-- AMCL -->
-    <include file="/home/joan/catkin_ws/src/turtlebot3/turtlebot3_navigation/launch/amcl.launch"/>
+    <include file="~/catkin_ws/src/turtlebot3/turtlebot3_navigation/launch/amcl.launch"/>
 
     <!-- move_base -->
-    <include file="/home/joan/catkin_ws/src/turtlebot3/turtlebot3_navigation/launch/move_base.launch">
+    <include file="~/catkin_ws/src/turtlebot3/turtlebot3_navigation/launch/move_base.launch">
         <arg name="model" value="$(arg model)" />
     </include>
 
