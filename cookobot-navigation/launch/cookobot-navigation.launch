@@ -1,15 +1,15 @@
 <launch>
     <!-- Arguments -->
     <arg name="model" default="burger"/>
-    <arg name="map_file" default="/home/joan/catkin_ws/maps/tb3_house.map.yaml"/>
+    <arg name="map_file" default="$(env HOME)/catkin_ws/maps/tb3_house.map.yaml"/>
     <arg name="open_rviz" default="true"/>
-    <arg name="rviz_config" default="/home/joan/catkin_ws/src/my_navigation_stack/config/my_config.rviz"/>
+    <arg name="rviz_config" default="$(env HOME)/catkin_ws/src/my_navigation_stack/config/my_config.rviz"/>
 
     <!-- My Navigation -->
-    <include file="/home/joan/catkin_ws/src/cookobot-navigation/my_navigation_stack/launch/my_navigation_launch.launch" />
+    <include file="$(env HOME)/catkin_ws/src/cookobot-navigation/my_navigation_stack/launch/my_navigation_launch.launch" />
 
     <!-- Provide Map -->
-    <include file="/home/joan/catkin_ws/src/cookobot-navigation/provide_map/launch/provide_map.launch"/>
+    <include file="$(env HOME)/catkin_ws/src/cookobot-navigation/provide_map/launch/provide_map.launch"/>
 
     <!-- rviz -->
     <group if="$(arg open_rviz)">
