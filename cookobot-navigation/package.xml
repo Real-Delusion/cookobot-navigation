@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>cookobot-navigation</name>
+  <version>1.0.0</version>
+  <description>
+    Navigation packages for Cookobot (Turtlebot3) (meta package)
+  </description>
+  <license>Apache 2.0</license>
+  <license>BSD</license>
+  <author email="realdelusion@gmail.com">Real Delusion</author>
+  <author>Real Delusion</author>
+  <maintainer email="realdelusion@gmail.com">Pyo</maintainer>
+  <buildtool_depend>catkin</buildtool_depend>
+  <exec_depend>provide_map</exec_depend>
+  <exec_depend>my_navigation_stack</exec_depend>
+  <export><metapackage/></export>
+</package>
