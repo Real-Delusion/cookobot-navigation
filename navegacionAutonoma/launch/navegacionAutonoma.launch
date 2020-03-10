@@ -1,0 +1,8 @@
+<launch>
+    <node
+        pkg = "navegacionAutonoma"
+        type = "navegacion.py"
+        name = "navegacion_autonoma"
+        output = "screen">
+    </node>
+</launch>
