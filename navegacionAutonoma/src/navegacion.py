@@ -168,10 +168,6 @@ class main():
         def shutdown(self):
             rospy.loginf("Parando la ejecucion...")
             rospy.sleep(1)
-    
-    def ejecutarMaquinaEstados():
-        #Ejecutamos la maquina de estados
-        pass
         
 
 # --------------------------------------------------------------------------------------------------------
@@ -189,7 +185,6 @@ def callbackServicio(data):
     rospy.loginfo(numeroMesaSaleccionada)
     
     controlador = main(numeroMesaSaleccionada)
-    controlador.ejecutarMaquinaEstados()
 
 
 # Servicio
