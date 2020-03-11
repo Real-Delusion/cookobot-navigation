@@ -48,7 +48,7 @@ class PowerOnRobot(State):
 
 class WaitingOrder(State):
     def __init__(self, order_state):
-        State.__init__(self, outcomes=['mesa1', 'mesa2', 'mesa3', 'mesa4', 'aborted'], input_keys=[''], output_keys=[''])
+        State.__init__(self, outcomes=['mesa1', 'mesa2', 'mesa3', 'mesa4', 'cocina','aborted'], input_keys=[''], output_keys=[''])
         self.order = order_state
 
     def execute(self, userdata):
@@ -59,7 +59,9 @@ class WaitingOrder(State):
         elif self.order == '3':
             return 'mesa3'
         elif self.order == '4':
-            return 'mesa4' 
+            return 'mesa4'
+        elif self.order == '0':
+            return 'cocina' 
         else:
             return 'aborted'
 
@@ -138,20 +140,24 @@ class main():
                              transitions={'succeeded':'WAITING_ORDER', 'aborted':'aborted'})
             # Estado esperar orden
             StateMachine.add('WAITING_ORDER', WaitingOrder(ordenARealizar), 
-                             transitions={'mesa1':waypoints[0][0], 'mesa2':waypoints[1][0], 'mesa3':waypoints[2][0], 'mesa4':waypoints[3][0], 'aborted':'WAITING_ORDER'})
+                             transitions={'mesa1':waypoints[0][0], 'mesa2':waypoints[1][0], 'mesa3':waypoints[2][0], 'mesa4':waypoints[3][0],'cocina':waypoints[4][0], 'aborted':'WAITING_ORDER'})
             
             # Estado mesas
             # MESA 1
             StateMachine.add(waypoints[0][0], Navigate( waypoints[0][1], waypoints[0][2], waypoints[0][0]), 
-                             transitions={'succeeded':'CHARGE','aborted':'WAITING_ORDER'})
+                             transitions={'succeeded':'WAITING_ORDER','aborted':waypoints[4][0]})
             # MESA 2
             StateMachine.add(waypoints[1][0], Navigate( waypoints[1][1], waypoints[1][2], waypoints[1][0]), 
-                             transitions={'succeeded':'CHARGE','aborted':'WAITING_ORDER'})
+                             transitions={'succeeded':'WAITING_ORDER','aborted':waypoints[4][0]})
             # MESA 3
             StateMachine.add(waypoints[2][0], Navigate( waypoints[2][1], waypoints[2][2], waypoints[2][0]), 
-                             transitions={'succeeded':'CHARGE','aborted':'WAITING_ORDER'})
-            # MESA 
+                             transitions={'succeeded':'WAITING_ORDER','aborted':waypoints[4][0]})
+            # MESA 4
             StateMachine.add(waypoints[3][0], Navigate( waypoints[3][1], waypoints[3][2], waypoints[3][0]), 
+                             transitions={'succeeded':'WAITING_ORDER','aborted':waypoints[4][0]})
+            # Cocina
+            # MESA 4
+            StateMachine.add(waypoints[4][0], Navigate( waypoints[4][1], waypoints[4][2], waypoints[4][0]), 
                              transitions={'succeeded':'CHARGE','aborted':'WAITING_ORDER'})
             
             # Estado carga
