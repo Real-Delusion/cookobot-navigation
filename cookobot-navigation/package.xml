@@ -13,5 +13,7 @@
   <buildtool_depend>catkin</buildtool_depend>
   <exec_depend>provide_map</exec_depend>
   <exec_depend>my_navigation_stack</exec_depend>
+  <exec_depend>navegacionAutonoma</exec_depend>
+
   <export><metapackage/></export>
 </package>
