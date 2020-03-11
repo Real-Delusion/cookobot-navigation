@@ -14,7 +14,7 @@ import actionlib
 from move_base_msgs.msg import MoveBaseAction, MoveBaseGoal, MoveBaseActionFeedback
 from tf.transformations import quaternion_from_euler
 from collections import OrderedDict
-from mesa_msg.srv import Mesa
+from mesa_msg.srv import Mesa, MesaResponse
 
 # --------------------------------------------------------------------------------------------------------
 
@@ -47,20 +47,19 @@ class PowerOnRobot(State):
 
 
 class WaitingOrder(State):
-    def __init__(self, order_state):
-        State.__init__(self, outcomes=['mesa1', 'mesa2', 'mesa3', 'mesa4', 'cocina','aborted'], input_keys=[''], output_keys=[''])
-        self.order = order_state
+    def __init__(self):
+        State.__init__(self, outcomes=['mesa1', 'mesa2', 'mesa3', 'mesa4', 'cocina','aborted'], input_keys=['input'], output_keys=[''])
 
     def execute(self, userdata):
-        if self.order == '1':
+        if userdata.input == '1':
             return 'mesa1'
-        elif self.order == '2':
+        elif userdata.input == '2':
             return 'mesa2'
-        elif self.order == '3':
+        elif userdata.input == '3':
             return 'mesa3'
-        elif self.order == '4':
+        elif userdata.input == '4':
             return 'mesa4'
-        elif self.order == '0':
+        elif userdata.input == '0':
             return 'cocina' 
         else:
             return 'aborted'
@@ -69,8 +68,8 @@ class WaitingOrder(State):
 class Navigate(State):
     def __init__(self, position, orientation, place):
         State.__init__(self, outcomes=['succeeded', 'aborted'], input_keys=[''], output_keys=[''])
-        self._position =position
-        self._orientation =orientation
+        self._position = position
+        self._orientation = orientation
         self._place = place
         self._move_base = actionlib.SimpleActionClient("/move_base", MoveBaseAction)
         rospy.loginfo("Activando el cliente de navegacion..")
@@ -91,13 +90,15 @@ class Navigate(State):
         goal.target_pose.pose.orientation.w = self._orientation[3]
 
         rospy.loginfo("ROBOT %s" %(self._place))
+        
         # sends the goal
         self._move_base.send_goal(goal)
         self._move_base.wait_for_result()
+        
         # Comprobamos el estado de la navegacion
         nav_state = self._move_base.get_state()
         rospy.loginfo("[Result] State: %d" % (nav_state))
-        nav_state = 3
+        #nav_state = 3
 
         if nav_state == 3:
             return 'succeeded'
@@ -130,7 +131,8 @@ class main():
         self.ordenARealizar = ordenARealizar
 
         maquinaEstadosNavegacion = StateMachine(outcomes=['succeeded','aborted'])
-        maquinaEstadosNavegacion.userdata.sm_input = 1
+        # maquinaEstadosNavegacion.userdata.chargeInput = 1
+        maquinaEstadosNavegacion.userdata.ordenARealizar = self.ordenARealizar
         
         # global ordenARealizar
         
@@ -139,35 +141,35 @@ class main():
             StateMachine.add('POWER_ON', PowerOnRobot(), 
                              transitions={'succeeded':'WAITING_ORDER', 'aborted':'aborted'})
             # Estado esperar orden
-            StateMachine.add('WAITING_ORDER', WaitingOrder(ordenARealizar), 
-                             transitions={'mesa1':waypoints[0][0], 'mesa2':waypoints[1][0], 'mesa3':waypoints[2][0], 'mesa4':waypoints[3][0],'cocina':waypoints[4][0], 'aborted':'WAITING_ORDER'})
+            StateMachine.add('WAITING_ORDER', WaitingOrder(), 
+                             transitions={'mesa1':waypoints[0][0], 'mesa2':waypoints[1][0], 'mesa3':waypoints[2][0], 'mesa4':waypoints[3][0],'cocina':waypoints[4][0], 'aborted':'WAITING_ORDER'},
+                             remapping={'input':'ordenARealizar', 'output':''})
             
             # Estado mesas
             # MESA 1
             StateMachine.add(waypoints[0][0], Navigate( waypoints[0][1], waypoints[0][2], waypoints[0][0]), 
-                             transitions={'succeeded':'WAITING_ORDER','aborted':waypoints[4][0]})
+                             transitions={'succeeded':'succeeded','aborted':waypoints[4][0]})
             # MESA 2
             StateMachine.add(waypoints[1][0], Navigate( waypoints[1][1], waypoints[1][2], waypoints[1][0]), 
-                             transitions={'succeeded':'WAITING_ORDER','aborted':waypoints[4][0]})
+                             transitions={'succeeded':'succeeded','aborted':waypoints[4][0]})
             # MESA 3
             StateMachine.add(waypoints[2][0], Navigate( waypoints[2][1], waypoints[2][2], waypoints[2][0]), 
-                             transitions={'succeeded':'WAITING_ORDER','aborted':waypoints[4][0]})
+                             transitions={'succeeded':'succeeded','aborted':waypoints[4][0]})
             # MESA 4
             StateMachine.add(waypoints[3][0], Navigate( waypoints[3][1], waypoints[3][2], waypoints[3][0]), 
-                             transitions={'succeeded':'WAITING_ORDER','aborted':waypoints[4][0]})
+                             transitions={'succeeded':'succeeded','aborted':waypoints[4][0]})
             # Cocina
-            # MESA 4
             StateMachine.add(waypoints[4][0], Navigate( waypoints[4][1], waypoints[4][2], waypoints[4][0]), 
-                             transitions={'succeeded':'CHARGE','aborted':'WAITING_ORDER'})
+                             transitions={'succeeded':'succeeded','aborted':'WAITING_ORDER'})
             
-            # Estado carga
-            StateMachine.add('CHARGE', Charge(), transitions={'succeeded': 'succeeded', 'aborted': 'aborted'},
-                             remapping={'input':'sm_input', 'output':''})
+            # # Estado carga
+            # StateMachine.add('CHARGE', Charge(), transitions={'succeeded': 'succeeded', 'aborted': 'aborted'},
+            #                  remapping={'input':'chargeInput', 'output':''})
             
         intro_server = IntrospectionServer('Coockbot',maquinaEstadosNavegacion, '/SM_ROOT')
-        intro_server.start()
+        intro_server.start() # iniciamos el servidor
         
-        maquinaEstados_ejecucion = maquinaEstadosNavegacion.execute()
+        maquinaEstados_ejecucion = maquinaEstadosNavegacion.execute() # ejecutamos la maquina de estados
         intro_server.stop()
 
 
@@ -191,6 +193,13 @@ def callbackServicio(data):
     rospy.loginfo(numeroMesaSaleccionada)
     
     controlador = main(numeroMesaSaleccionada)
+    
+    response = MesaResponse()
+    response.success = True
+    
+    return response
+    
+    
 
 
 # Servicio
