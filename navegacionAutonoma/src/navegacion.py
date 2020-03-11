@@ -52,13 +52,13 @@ class WaitingOrder(State):
         self.order = order_state
 
     def execute(self, userdata):
-        if self.order == 1:
+        if self.order == '1':
             return 'mesa1'
-        elif self.order == 2:
+        elif self.order == '2':
             return 'mesa2'
-        elif self.order == 3:
+        elif self.order == '3':
             return 'mesa3'
-        elif self.order == 4:
+        elif self.order == '4':
             return 'mesa4' 
         else:
             return 'aborted'
