@@ -1,5 +1,5 @@
 <launch>
-    <arg name="map_file" default="$(env HOME)/catkin_ws/maps/mapa_restaurante.yaml"/>
+    <arg name="map_file" default="$(env HOME)/catkin_ws/src/cookobot-navigation/maps/mapa_restaurante.yaml"/>
     <node
         name="map_server"
         type="map_server"

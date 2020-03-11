@@ -120,6 +120,8 @@ class Charge(State):
 class main():
     
     # ordenARealizar = 0
+    # intro_server = None
+    # maquinaEstadosNavegacion = None
     
     def __init__(self,ordenARealizar):
         
@@ -158,6 +160,9 @@ class main():
             
         intro_server = IntrospectionServer('Coockbot',maquinaEstadosNavegacion, '/SM_ROOT')
         intro_server.start()
+        
+        maquinaEstados_ejecucion = maquinaEstadosNavegacion.execute()
+        intro_server.stop()
 
 
         def shutdown(self):
@@ -166,8 +171,8 @@ class main():
     
     def ejecutarMaquinaEstados():
         #Ejecutamos la maquina de estados
-        maquinaEstados_ejecucion = maquinaEstadosNavegacion.execute()
-        intro_server.stop()
+        pass
+        
 
 # --------------------------------------------------------------------------------------------------------
 
