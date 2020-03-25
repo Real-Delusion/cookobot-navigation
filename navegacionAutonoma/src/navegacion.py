@@ -51,15 +51,15 @@ class WaitingOrder(State):
         State.__init__(self, outcomes=['mesa1', 'mesa2', 'mesa3', 'mesa4', 'cocina','aborted'], input_keys=['input'], output_keys=[''])
 
     def execute(self, userdata):
-        if userdata.input == '1':
+        if userdata.input == 1:
             return 'mesa1'
-        elif userdata.input == '2':
+        elif userdata.input == 2:
             return 'mesa2'
-        elif userdata.input == '3':
+        elif userdata.input == 3:
             return 'mesa3'
-        elif userdata.input == '4':
+        elif userdata.input == 4:
             return 'mesa4'
-        elif userdata.input == '0':
+        elif userdata.input == 0:
             return 'cocina' 
         else:
             return 'aborted'
