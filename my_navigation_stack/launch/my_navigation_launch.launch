@@ -1,7 +1,7 @@
 <launch>
     <!-- Arguments -->
     <arg name="model" default="burger"/>
-    <arg name="map_file" default="$(env HOME)/catkin_ws/src/cookobot-navigation/maps/mapa_restaurante.yaml"/>
+    <arg name="map_file" default="$(env HOME)/catkin_ws/src/cookobot-navigation/maps/restaurant_map.yaml"/>
     <arg name="open_rviz" default="true"/>
     <arg name="rviz_config" default="$(env HOME)/catkin_ws/src/cookobot-navigation/my_navigation_stack/config/my_config.rviz"/>
 
