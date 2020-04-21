@@ -60,6 +60,8 @@ class WaitingOrder(State):
             return 'mesa3'
         elif userdata.input == 4:
             return 'mesa4'
+        elif userdata.input == 5:
+            return 'mesa5'
         elif userdata.input == 0:
             return 'cocina' 
         else:
@@ -159,8 +161,11 @@ class main():
             # MESA 4
             StateMachine.add(waypoints[3][0], Navigate( waypoints[3][1], waypoints[3][2], waypoints[3][0]), 
                              transitions={'succeeded':'succeeded','aborted':waypoints[4][0]})
-            # Cocina
+            # MESA 5
             StateMachine.add(waypoints[4][0], Navigate( waypoints[4][1], waypoints[4][2], waypoints[4][0]), 
+                             transitions={'succeeded':'succeeded','aborted':waypoints[4][0]})
+            # Cocina
+            StateMachine.add(waypoints[5][0], Navigate( waypoints[5][1], waypoints[5][2], waypoints[5][0]), 
                              transitions={'succeeded':'succeeded','aborted':'WAITING_ORDER'})
             
             # # Estado carga
