@@ -4,7 +4,9 @@
     <arg name="map_file" default="$(env HOME)/catkin_ws/src/cookobot-navigation/maps/restaurant_map.yaml"/>
     <arg name="open_rviz" default="true"/>
     <arg name="rviz_config" default="$(env HOME)/catkin_ws/src/cookobot-navigation/my_navigation_stack/config/my_config.rviz"/>
-
+    
+    <param name ="/use_sim_time" value="true"/>
+    
     <!-- Turtlebot3 -->
     <include file="$(env HOME)/catkin_ws/src/turtlebot3/turtlebot3_bringup/launch/turtlebot3_remote.launch">
         <arg name="model" value="$(arg model)"/>
