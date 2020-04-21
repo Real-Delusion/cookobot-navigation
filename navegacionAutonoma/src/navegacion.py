@@ -157,11 +157,6 @@ class main():
         
         maquinaEstados_ejecucion = maquinaEstadosNavegacion.execute() # ejecutamos la maquina de estados
         intro_server.stop()
-
-
-        def shutdown(self):
-            rospy.loginf("Parando la ejecucion...")
-            rospy.sleep(1)
 # --------------------------------------------------------------------------------------------------------
 
 # --------------------------------------------------------------------------------------------------------
