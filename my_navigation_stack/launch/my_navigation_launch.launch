@@ -14,7 +14,10 @@
     <include file="$(env HOME)/catkin_ws/src/cookobot-navigation/provide_map/launch/provide_map.launch"/>
 
     <!-- AMCL -->
-    <include file="$(env HOME)/catkin_ws/src/turtlebot3/turtlebot3_navigation/launch/amcl.launch"/>
+    <include file="$(env HOME)/catkin_ws/src/turtlebot3/turtlebot3_navigation/launch/amcl.launch">
+        <arg name="initial_pose_x" value="4.63" />
+        <arg name="initial_pose_y" value="1.64" />
+    </include>
 
     <!-- move_base -->
     <include file="$(env HOME)/catkin_ws/src/turtlebot3/turtlebot3_navigation/launch/move_base.launch">
