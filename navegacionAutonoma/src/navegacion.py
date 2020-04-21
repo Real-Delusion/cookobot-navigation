@@ -49,7 +49,7 @@ class PowerOnRobot(State):
 
 class WaitingOrder(State):
     def __init__(self):
-        State.__init__(self, outcomes=['mesa1', 'mesa2', 'mesa3', 'mesa4', 'cocina','aborted'], input_keys=['input'], output_keys=[''])
+        State.__init__(self, outcomes=['mesa1', 'mesa2', 'mesa3', 'mesa4', 'mesa5','cocina','aborted'], input_keys=['input'], output_keys=[''])
 
     def execute(self, userdata):
         if userdata.input == 1:
@@ -109,25 +109,8 @@ class Navigate(State):
             return 'aborted'
 
 
-class Charge(State):
-    def __init__(self):
-        State.__init__(self, outcomes=['succeeded','aborted'], input_keys=['input'], output_keys=[''])
-
-    def execute(self, userdata):
-        print("Revisando la carga de la bateria...")
-        if userdata.input == 1:
-            print("Robot cargado")
-            return 'succeeded'
-        else:
-            print("Robot sin carga")
-            return 'aborted'
-
-
 class main():
     
-    # ordenARealizar = 0
-    # intro_server = None
-    # maquinaEstadosNavegacion = None
     
     def __init__(self,ordenARealizar):
         
@@ -145,7 +128,7 @@ class main():
                              transitions={'succeeded':'WAITING_ORDER', 'aborted':'aborted'})
             # Estado esperar orden
             StateMachine.add('WAITING_ORDER', WaitingOrder(), 
-                             transitions={'mesa1':waypoints[0][0], 'mesa2':waypoints[1][0], 'mesa3':waypoints[2][0], 'mesa4':waypoints[3][0],'cocina':waypoints[4][0], 'aborted':'WAITING_ORDER'},
+                             transitions={'mesa1':waypoints[0][0], 'mesa2':waypoints[1][0], 'mesa3':waypoints[2][0], 'mesa4':waypoints[3][0],'mesa4':waypoints[4][0], 'cocina':waypoints[5][0], 'aborted':'WAITING_ORDER'},
                              remapping={'input':'ordenARealizar', 'output':''})
             
             # Estado mesas
@@ -168,9 +151,6 @@ class main():
             StateMachine.add(waypoints[5][0], Navigate( waypoints[5][1], waypoints[5][2], waypoints[5][0]), 
                              transitions={'succeeded':'succeeded','aborted':'WAITING_ORDER'})
             
-            # # Estado carga
-            # StateMachine.add('CHARGE', Charge(), transitions={'succeeded': 'succeeded', 'aborted': 'aborted'},
-            #                  remapping={'input':'chargeInput', 'output':''})
             
         intro_server = IntrospectionServer('Coockbot',maquinaEstadosNavegacion, '/SM_ROOT')
         intro_server.start() # iniciamos el servidor
@@ -182,8 +162,6 @@ class main():
         def shutdown(self):
             rospy.loginf("Parando la ejecucion...")
             rospy.sleep(1)
-        
-
 # --------------------------------------------------------------------------------------------------------
 
 # --------------------------------------------------------------------------------------------------------
@@ -214,11 +192,3 @@ servicio = rospy.Service('/navegacion_autonoma_servicio',Mesa,callbackServicio)
 rospy.Rate(1)
 rospy.loginfo("El servicio esta listo")
 rospy.spin()
-
-
-
-# if __name__=='__main__':
-#     try:
-#         main()
-#     except rospy.ROSInterruptException:
-#         rospy.loginfo(" Testeo Robot Mayordomo finalizado")
