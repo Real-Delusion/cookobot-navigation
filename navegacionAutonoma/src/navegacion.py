@@ -116,6 +116,9 @@ class main():
         
         self.ordenARealizar = ordenARealizar
 
+        rospy.loginfo("Init con ")
+        rospy.loginfo(ordenARealizar)
+        
         maquinaEstadosNavegacion = StateMachine(outcomes=['succeeded','aborted'])
         # maquinaEstadosNavegacion.userdata.chargeInput = 1
         maquinaEstadosNavegacion.userdata.ordenARealizar = self.ordenARealizar
@@ -128,28 +131,30 @@ class main():
                              transitions={'succeeded':'WAITING_ORDER', 'aborted':'aborted'})
             # Estado esperar orden
             StateMachine.add('WAITING_ORDER', WaitingOrder(), 
-                             transitions={'mesa1':waypoints[0][0], 'mesa2':waypoints[1][0], 'mesa3':waypoints[2][0], 'mesa4':waypoints[3][0],'mesa4':waypoints[4][0], 'cocina':waypoints[5][0], 'aborted':'WAITING_ORDER'},
+                             transitions={'mesa1':waypoints[0][0], 'mesa2':waypoints[1][0], 'mesa3':waypoints[2][0], 'mesa4':waypoints[3][0],'mesa5':waypoints[4][0], 'cocina':waypoints[5][0], 'aborted':'WAITING_ORDER'},
                              remapping={'input':'ordenARealizar', 'output':''})
             
             # Estado mesas
             # MESA 1
             StateMachine.add(waypoints[0][0], Navigate( waypoints[0][1], waypoints[0][2], waypoints[0][0]), 
-                             transitions={'succeeded':'succeeded','aborted':waypoints[4][0]})
+                             transitions={'succeeded':'succeeded','aborted':waypoints[5][0]})
             # MESA 2
             StateMachine.add(waypoints[1][0], Navigate( waypoints[1][1], waypoints[1][2], waypoints[1][0]), 
-                             transitions={'succeeded':'succeeded','aborted':waypoints[4][0]})
+                             transitions={'succeeded':'succeeded','aborted':waypoints[5][0]})
             # MESA 3
             StateMachine.add(waypoints[2][0], Navigate( waypoints[2][1], waypoints[2][2], waypoints[2][0]), 
-                             transitions={'succeeded':'succeeded','aborted':waypoints[4][0]})
+                             transitions={'succeeded':'succeeded','aborted':waypoints[5][0]})
             # MESA 4
             StateMachine.add(waypoints[3][0], Navigate( waypoints[3][1], waypoints[3][2], waypoints[3][0]), 
-                             transitions={'succeeded':'succeeded','aborted':waypoints[4][0]})
+                             transitions={'succeeded':'succeeded','aborted':waypoints[5][0]})
             # MESA 5
             StateMachine.add(waypoints[4][0], Navigate( waypoints[4][1], waypoints[4][2], waypoints[4][0]), 
-                             transitions={'succeeded':'succeeded','aborted':waypoints[4][0]})
+                             transitions={'succeeded':'succeeded','aborted':waypoints[5][0]})
             # Cocina
             StateMachine.add(waypoints[5][0], Navigate( waypoints[5][1], waypoints[5][2], waypoints[5][0]), 
                              transitions={'succeeded':'succeeded','aborted':'WAITING_ORDER'})
+            
+            rospy.loginfo("Statemachine.add done")
             
             
         intro_server = IntrospectionServer('Coockbot',maquinaEstadosNavegacion, '/SM_ROOT')
