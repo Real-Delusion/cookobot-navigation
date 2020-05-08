@@ -36,7 +36,7 @@
       <visual>
         <origin xyz="-0.028 -0.0493 0.014" rpy="0.0 0.0 -${M_PI/2}"/>
         <geometry>
-          <mesh filename="package://cookobot-arm/meshes/mount.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/>
+          <mesh filename="package://cookobot_gazebo/meshes/mount.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/>
         </geometry>
         <material name="${color}"/>
       </visual>
@@ -69,7 +69,7 @@
       <visual>
         <origin xyz=" 0 0 0 " rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://cookobot-arm/meshes/turtlebot_finger.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/>
+          <mesh filename="package://cookobot_gazebo/meshes/turtlebot_finger.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/>
         </geometry>
         <material name="${color}"/>
       </visual>
@@ -108,7 +108,7 @@
       <visual>
         <origin xyz=" 0 0 0 " rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://cookobot-arm/meshes/ax12_box.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/>
+          <mesh filename="package://cookobot_gazebo/meshes/ax12_box.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/>
         </geometry>
         <material name="Black"/>
       </visual>
@@ -141,7 +141,7 @@
       <visual>
         <origin xyz=" 0 0 0 " rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://cookobot-arm/meshes/F10.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/>
+          <mesh filename="package://cookobot_gazebo/meshes/F10.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/>
         </geometry>
         <material name="${color}"/>
       </visual>
@@ -174,7 +174,7 @@
       <visual>
         <origin xyz=" 0 0 0 " rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://cookobot-arm/meshes/F3.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/>
+          <mesh filename="package://cookobot_gazebo/meshes/F3.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/>
         </geometry>
         <material name="${color}"/>
       </visual>
@@ -210,7 +210,7 @@
       <visual>
         <origin xyz=" 0 0 0 " rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://cookobot-arm/meshes/F3.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/>
+          <mesh filename="package://cookobot_gazebo/meshes/F3.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/>
         </geometry>
         <material name="${color}"/>
       </visual>
@@ -246,7 +246,7 @@
       <visual>
         <origin xyz=" 0 0 0 " rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://cookobot-arm/meshes/F2.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/>
+          <mesh filename="package://cookobot_gazebo/meshes/F2.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/>
         </geometry>
         <material name="${color}"/>
       </visual>
@@ -282,7 +282,7 @@
       <visual>
         <origin xyz=" 0 0 0 " rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://cookobot-arm/meshes/F4.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/>
+          <mesh filename="package://cookobot_gazebo/meshes/F4.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/>
         </geometry>
         <material name="${color}"/>
       </visual>
@@ -314,7 +314,7 @@
       <visual>
         <origin xyz="0.016 0 -.015 " rpy="${M_PI} ${-M_PI/2} ${M_PI/2}"/>
         <geometry>
-          <mesh filename="package://cookobot-arm/meshes/pincher_finger_base.stl" scale=".01 .01 .01"/>
+          <mesh filename="package://cookobot_gazebo/meshes/pincher_finger_base.stl" scale=".01 .01 .01"/>
         </geometry>
         <material name="${color}"/>
       </visual>
@@ -340,7 +340,7 @@
       <visual>
         <xacro:insert_block name="origin"/>
         <geometry>
-          <mesh filename="package://cookobot-arm/meshes/pincher_finger.stl" scale=".01 .01 .01"/>
+          <mesh filename="package://cookobot_gazebo/meshes/pincher_finger.stl" scale=".01 .01 .01"/>
         </geometry>
         <material name="${color}"/>
       </visual>

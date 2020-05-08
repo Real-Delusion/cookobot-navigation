@@ -47,7 +47,7 @@
     <visual>
       <origin xyz="-0.032 0 0.0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find cookobot-arm)/robot_description/urdf/meshes/bases/burger_base.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="file://$(find cookobot_gazebo)/robot_description/urdf/meshes/bases/burger_base.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="light_black"/>
     </visual>
@@ -79,7 +79,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="1.57 0 0"/>
       <geometry>
-        <mesh filename="file://$(find cookobot-arm)/robot_description/urdf/meshes/wheels/left_tire.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="file://$(find cookobot_gazebo)/robot_description/urdf/meshes/wheels/left_tire.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark"/>
     </visual>
@@ -111,7 +111,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="1.57 0 0"/>
       <geometry>
-        <mesh filename="file://$(find cookobot-arm)/robot_description/urdf/meshes/wheels/right_tire.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="file://$(find cookobot_gazebo)/robot_description/urdf/meshes/wheels/right_tire.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark"/>
     </visual>
@@ -173,7 +173,7 @@
     <visual>
       <origin xyz="0 0 0.0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find cookobot-arm)/robot_description/urdf/meshes/sensors/lds.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="file://$(find cookobot_gazebo)/robot_description/urdf/meshes/sensors/lds.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark"/>
     </visual>
@@ -226,7 +226,7 @@
   </joint>
 <!-- ARM -->
 
-    <xacro:include filename="$(find cookobot-arm)/robot_description/urdf/turtlebot_arm.xacro"/>
+    <xacro:include filename="$(find cookobot_gazebo)/robot_description/urdf/turtlebot_arm.xacro"/>
 
 
 </robot>

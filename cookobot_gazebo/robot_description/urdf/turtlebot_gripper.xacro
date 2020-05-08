@@ -28,7 +28,7 @@
       <visual>
         <origin xyz=" 0 0 0 " rpy="0 0 0"/>
         <geometry>
-          <mesh filename="file://$(find cookobot-arm)/robot_description/urdf/meshes/F2.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/>
+          <mesh filename="file://$(find cookobot_gazebo)/robot_description/urdf/meshes/F2.stl" scale="${M_SCALE} ${M_SCALE} ${M_SCALE}"/>
         </geometry>
         <material name="${color}"/>
       </visual>

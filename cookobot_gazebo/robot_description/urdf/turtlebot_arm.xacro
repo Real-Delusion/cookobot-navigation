@@ -39,7 +39,7 @@
         <visual>
             <origin rpy="0 0 0" xyz=" 0 0 0 " />
             <geometry>
-                <mesh filename="file://$(find cookobot-arm)/robot_description/urdf/meshes/arm/ax12_box.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="file://$(find cookobot_gazebo)/robot_description/urdf/meshes/arm/ax12_box.stl" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="Black" />
         </visual>
@@ -70,7 +70,7 @@
         <visual>
             <origin rpy="0 0 0" xyz=" 0 0 0 " />
             <geometry>
-                <mesh filename="file://$(find cookobot-arm)/robot_description/urdf/meshes/arm/F3.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="file://$(find cookobot_gazebo)/robot_description/urdf/meshes/arm/F3.stl" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="White" />
         </visual>
@@ -99,7 +99,7 @@
         <visual>
             <origin rpy="0 0 0" xyz=" 0 0 0 " />
             <geometry>
-                <mesh filename="file://$(find cookobot-arm)/robot_description/urdf/meshes/arm/ax12_box.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="file://$(find cookobot_gazebo)/robot_description/urdf/meshes/arm/ax12_box.stl" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="Black" />
         </visual>
@@ -130,7 +130,7 @@
         <visual>
             <origin rpy="0 0 0" xyz=" 0 0 0 " />
             <geometry>
-                <mesh filename="file://$(find cookobot-arm)/robot_description/urdf/meshes/arm/F4.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="file://$(find cookobot_gazebo)/robot_description/urdf/meshes/arm/F4.stl" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="White" />
         </visual>
@@ -159,7 +159,7 @@
         <visual>
             <origin rpy="0 0 0" xyz=" 0 0 0 " />
             <geometry>
-                <mesh filename="file://$(find cookobot-arm)/robot_description/urdf/meshes/arm/F10.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="file://$(find cookobot_gazebo)/robot_description/urdf/meshes/arm/F10.stl" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="White" />
         </visual>
@@ -188,7 +188,7 @@
         <visual>
             <origin rpy="0 0 0" xyz=" 0 0 0 " />
             <geometry>
-                <mesh filename="file://$(find cookobot-arm)/robot_description/urdf/meshes/arm/F10.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="file://$(find cookobot_gazebo)/robot_description/urdf/meshes/arm/F10.stl" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="White" />
         </visual>
@@ -217,7 +217,7 @@
         <visual>
             <origin rpy="0 0 0" xyz=" 0 0 0 " />
             <geometry>
-                <mesh filename="file://$(find cookobot-arm)/robot_description/urdf/meshes/arm/F10.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="file://$(find cookobot_gazebo)/robot_description/urdf/meshes/arm/F10.stl" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="White" />
         </visual>
@@ -246,7 +246,7 @@
         <visual>
             <origin rpy="0 0 0" xyz=" 0 0 0 " />
             <geometry>
-                <mesh filename="file://$(find cookobot-arm)/robot_description/urdf/meshes/arm/F3.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="file://$(find cookobot_gazebo)/robot_description/urdf/meshes/arm/F3.stl" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="White" />
         </visual>
@@ -275,7 +275,7 @@
         <visual>
             <origin rpy="0 0 0" xyz=" 0 0 0 " />
             <geometry>
-                <mesh filename="file://$(find cookobot-arm)/robot_description/urdf/meshes/arm/ax12_box.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="file://$(find cookobot_gazebo)/robot_description/urdf/meshes/arm/ax12_box.stl" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="Black" />
         </visual>
@@ -306,7 +306,7 @@
         <visual>
             <origin rpy="0 0 0" xyz=" 0 0 0 " />
             <geometry>
-                <mesh filename="file://$(find cookobot-arm)/robot_description/urdf/meshes/arm/F4.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="file://$(find cookobot_gazebo)/robot_description/urdf/meshes/arm/F4.stl" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="White" />
         </visual>
@@ -335,7 +335,7 @@
         <visual>
             <origin rpy="0 0 0" xyz=" 0 0 0 " />
             <geometry>
-                <mesh filename="file://$(find cookobot-arm)/robot_description/urdf/meshes/arm/F10.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="file://$(find cookobot_gazebo)/robot_description/urdf/meshes/arm/F10.stl" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="White" />
         </visual>
@@ -364,7 +364,7 @@
         <visual>
             <origin rpy="0 0 0" xyz=" 0 0 0 " />
             <geometry>
-                <mesh filename="file://$(find cookobot-arm)/robot_description/urdf/meshes/arm/F10.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="file://$(find cookobot_gazebo)/robot_description/urdf/meshes/arm/F10.stl" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="White" />
         </visual>
@@ -393,7 +393,7 @@
         <visual>
             <origin rpy="0 0 0" xyz=" 0 0 0 " />
             <geometry>
-                <mesh filename="file://$(find cookobot-arm)/robot_description/urdf/meshes/arm/F10.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="file://$(find cookobot_gazebo)/robot_description/urdf/meshes/arm/F10.stl" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="White" />
         </visual>
@@ -422,7 +422,7 @@
         <visual>
             <origin rpy="0 0 0" xyz=" 0 0 0 " />
             <geometry>
-                <mesh filename="file://$(find cookobot-arm)/robot_description/urdf/meshes/arm/F3.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="file://$(find cookobot_gazebo)/robot_description/urdf/meshes/arm/F3.stl" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="White" />
         </visual>
@@ -451,7 +451,7 @@
         <visual>
             <origin rpy="0 0 0" xyz=" 0 0 0 " />
             <geometry>
-                <mesh filename="file://$(find cookobot-arm)/robot_description/urdf/meshes/arm/ax12_box.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="file://$(find cookobot_gazebo)/robot_description/urdf/meshes/arm/ax12_box.stl" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="Black" />
         </visual>
@@ -482,7 +482,7 @@
         <visual>
             <origin rpy="0 0 0" xyz=" 0 0 0 " />
             <geometry>
-                <mesh filename="file://$(find cookobot-arm)/robot_description/urdf/meshes/arm/F2.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="file://$(find cookobot_gazebo)/robot_description/urdf/meshes/arm/F2.stl" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="White" />
         </visual>
@@ -511,7 +511,7 @@
         <visual>
             <origin rpy="0 0 0" xyz=" 0 0 0 " />
             <geometry>
-                <mesh filename="file://$(find cookobot-arm)/robot_description/urdf/meshes/arm/F3.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="file://$(find cookobot_gazebo)/robot_description/urdf/meshes/arm/F3.stl" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="White" />
         </visual>
@@ -540,7 +540,7 @@
         <visual>
             <origin rpy="0 0 0" xyz=" 0 0 0 " />
             <geometry>
-                <mesh filename="file://$(find cookobot-arm)/robot_description/urdf/meshes/arm/ax12_box.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="file://$(find cookobot_gazebo)/robot_description/urdf/meshes/arm/ax12_box.stl" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="Black" />
         </visual>
@@ -571,7 +571,7 @@
         <visual>
             <origin rpy="0 0 0" xyz=" 0 0 0 " />
             <geometry>
-                <mesh filename="file://$(find cookobot-arm)/robot_description/urdf/meshes/arm/F2.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="file://$(find cookobot_gazebo)/robot_description/urdf/meshes/arm/F2.stl" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="White" />
         </visual>
@@ -599,7 +599,7 @@
         <visual>
             <origin rpy="0 0 0" xyz=" 0 0 0 " />
             <geometry>
-                <mesh filename="file://$(find cookobot-arm)/robot_description/urdf/meshes/arm/turtlebot_finger.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="file://$(find cookobot_gazebo)/robot_description/urdf/meshes/arm/turtlebot_finger.stl" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="Green" />
         </visual>
@@ -628,7 +628,7 @@
         <visual>
             <origin rpy="0 0 0" xyz=" 0 0 0 " />
             <geometry>
-                <mesh filename="file://$(find cookobot-arm)/robot_description/urdf/meshes/arm/F3.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="file://$(find cookobot_gazebo)/robot_description/urdf/meshes/arm/F3.stl" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="White" />
         </visual>
@@ -657,7 +657,7 @@
         <visual>
             <origin rpy="0 0 0" xyz=" 0 0 0 " />
             <geometry>
-                <mesh filename="file://$(find cookobot-arm)/robot_description/urdf/meshes/arm/turtlebot_finger.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="file://$(find cookobot_gazebo)/robot_description/urdf/meshes/arm/turtlebot_finger.stl" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="Green" />
         </visual>
