@@ -1,0 +1,9 @@
+turtlebot3_arm:
+  gazebo_ros_control:
+   pid_gains:
+      arm_shoulder_pan_joint: {p: 24000.0, i: 0.01, d: 10.0}
+      arm_shoulder_lift_joint: {p: 24000.0, i: 0.01, d: 10.0}
+      arm_elbow_flex_joint: {p: 24000.0, i: 0.01, d: 10.0}
+      arm_wrist_flex_joint: {p: 24000.0, i: 0.01, d: 10.0}
+      gripper_joint: {p: 24000.0, i: 0.01, d: 10.0}
+ 

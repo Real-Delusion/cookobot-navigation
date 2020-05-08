@@ -1,0 +1,36 @@
+#Publish all joint states --------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+#Position controllers --------------------------
+  arm_shoulder_pan_controller:
+    type: effort_controllers/JointPositionController
+    default: true
+    joint: arm_shoulder_pan_joint
+    pid: {p: 1.0, i: 0.0, d: 0.0}
+
+  arm_shoulder_lift_controller:
+    type: effort_controllers/JointPositionController
+    default: true
+    joint: arm_shoulder_lift_joint
+    pid: {p: 1.0, i: 0.0, d: 0.0}
+
+  arm_elbow_flex_controller:
+    type: effort_controllers/JointPositionController
+    default: true
+    joint: arm_elbow_flex_joint
+    pid: {p: 1.0, i: 0.0, d: 0.0}
+
+  arm_wrist_flex_controller:
+    type: effort_controllers/JointPositionController
+    default: true
+    joint: arm_wrist_flex_joint
+    pid: {p: 1.0, i: 0.0, d: 0.0}
+
+
+  gripper_controller:
+    type: effort_controllers/JointPositionController
+    default: true
+    joint: gripper_joint
+    pid: {p: 5.0, i: 0.0, d: 0.0}
