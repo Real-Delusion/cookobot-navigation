@@ -2776,14 +2776,14 @@
           <visual name='visual'>
             <geometry>
               <mesh>
-                <uri>model://table_number_one/one/one.dae</uri>
+                <uri>model://cookobot_gazebo/models/table_number_one/one/one.dae</uri>
               </mesh>
             </geometry>
           </visual>
           <collision name='collision'>
             <geometry>
               <mesh>
-                <uri>model://table_number_one/one/one.dae</uri>
+                <uri>model://cookobot_gazebo/models/table_number_one/one/one.dae</uri>
               </mesh>
             </geometry>
             <max_contacts>10</max_contacts>
