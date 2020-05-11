@@ -1,0 +1,87 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <model name='all_the_tables_numbers'>
+    <model name='building_curve'>
+      <static>1</static>
+      <link name='curve1'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://table_number_five/five/five.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://table_number_five/five/five.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+      </link>
+      <pose frame=''>-1.60519 -0.018672 0 0 0 -1.5609</pose>
+    </model>
+    <model name='building_curve_0'>
+      <static>1</static>
+      <link name='curve1'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://table_number_four/four/four.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://table_number_four/four/four.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+      </link>
+      <pose frame=''>0.242471 0.440375 -0 0 0 -1.56295</pose>
+    </model>
+    <model name='building_curve_1'>
+      <static>1</static>
+      <link name='curve1'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://table_number_three/three/three.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://table_number_three/three/three.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+      </link>
+      <pose frame=''>1.39415 0.504257 -0 0 -0 3.13723</pose>
+    </model>
+    <model name='building_curve_2'>
+      <static>1</static>
+      <link name='curve1'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://table_number_two/two/two.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://table_number_two/two/two.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+      </link>
+      <pose frame=''>-0.031447 -0.925975 0 0 -0 3.102</pose>
+    </model>
+    <static>0</static>
+    <allow_auto_disable>1</allow_auto_disable>
+  </model>
+</sdf>

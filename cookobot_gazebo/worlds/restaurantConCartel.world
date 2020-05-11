@@ -86,10 +86,10 @@
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
     <state world_name='default'>
-      <sim_time>1051 163000000</sim_time>
-      <real_time>81 504822539</real_time>
-      <wall_time>1588956501 249120699</wall_time>
-      <iterations>58104</iterations>
+      <sim_time>1062 786000000</sim_time>
+      <real_time>13 454248363</real_time>
+      <wall_time>1589216674 669475558</wall_time>
+      <iterations>11623</iterations>
       <model name='Restaurant'>
         <pose frame=''>2.75893 2.75821 0 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -129,6 +129,50 @@
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
+      </model>
+      <model name='all_the_tables_numbers'>
+        <pose frame=''>2.67407 4.04681 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <model name='building_curve'>
+          <pose frame=''>1.06888 4.02814 0 0 0 -1.5609</pose>
+          <scale>1 1 1</scale>
+          <link name='curve1'>
+            <pose frame=''>1.06888 4.02814 0 0 0 -1.5609</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+        </model>
+        <model name='building_curve_0'>
+          <pose frame=''>2.91654 4.48719 0 0 0 -1.56295</pose>
+          <scale>1 1 1</scale>
+          <link name='curve1'>
+            <pose frame=''>2.91654 4.48719 0 0 0 -1.56295</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+        </model>
+        <model name='building_curve_1'>
+          <pose frame=''>4.06822 4.55107 0 0 -0 3.13723</pose>
+          <scale>1 1 1</scale>
+          <link name='curve1'>
+            <pose frame=''>4.06822 4.55107 0 0 -0 3.13723</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+        </model>
+        <model name='building_curve_2'>
+          <pose frame=''>2.64262 3.12084 0 0 -0 3.102</pose>
+          <scale>1 1 1</scale>
+          <link name='curve1'>
+            <pose frame=''>2.64262 3.12084 0 0 -0 3.102</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+        </model>
       </model>
       <model name='building_curve'>
         <pose frame=''>4.78513 3.0288 0 0 0 -1.54609</pose>
@@ -2576,7 +2620,7 @@
     </model>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose frame=''>4.29767 -0.181455 11.7256 0 1.3418 1.48913</pose>
+        <pose frame=''>4.37352 1.10998 5.64951 0 1.3418 1.48913</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
@@ -2618,6 +2662,155 @@
         <kinematic>0</kinematic>
       </link>
       <pose frame=''>4.78513 3.0288 0 0 -0 0</pose>
+    </model>
+    <model name='all_the_tables_numbers'>
+      <model name='building_curve'>
+        <static>1</static>
+        <link name='curve1'>
+          <visual name='visual'>
+            <geometry>
+              <mesh>
+                <uri>model://table_number_five/five/five.dae</uri>
+              </mesh>
+            </geometry>
+          </visual>
+          <collision name='collision'>
+            <geometry>
+              <mesh>
+                <uri>model://table_number_five/five/five.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <pose frame=''>-1.60519 -0.018672 0 0 0 -1.5609</pose>
+      </model>
+      <model name='building_curve_0'>
+        <static>1</static>
+        <link name='curve1'>
+          <visual name='visual'>
+            <geometry>
+              <mesh>
+                <uri>model://table_number_four/four/four.dae</uri>
+              </mesh>
+            </geometry>
+          </visual>
+          <collision name='collision'>
+            <geometry>
+              <mesh>
+                <uri>model://table_number_four/four/four.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <pose frame=''>0.242471 0.440375 -0 0 0 -1.56295</pose>
+      </model>
+      <model name='building_curve_1'>
+        <static>1</static>
+        <link name='curve1'>
+          <visual name='visual'>
+            <geometry>
+              <mesh>
+                <uri>model://table_number_three/three/three.dae</uri>
+              </mesh>
+            </geometry>
+          </visual>
+          <collision name='collision'>
+            <geometry>
+              <mesh>
+                <uri>model://table_number_three/three/three.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <pose frame=''>1.39415 0.504257 -0 0 -0 3.13723</pose>
+      </model>
+      <model name='building_curve_2'>
+        <static>1</static>
+        <link name='curve1'>
+          <visual name='visual'>
+            <geometry>
+              <mesh>
+                <uri>model://table_number_two/two/two.dae</uri>
+              </mesh>
+            </geometry>
+          </visual>
+          <collision name='collision'>
+            <geometry>
+              <mesh>
+                <uri>model://table_number_two/two/two.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <pose frame=''>-0.031447 -0.925975 0 0 -0 3.102</pose>
+      </model>
+      <static>0</static>
+      <allow_auto_disable>1</allow_auto_disable>
+      <pose frame=''>2.67407 4.04681 0 0 -0 0</pose>
     </model>
   </world>
 </sdf>
