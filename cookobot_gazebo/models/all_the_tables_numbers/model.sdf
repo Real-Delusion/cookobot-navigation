@@ -81,6 +81,26 @@
       </link>
       <pose frame=''>-0.031447 -0.925975 0 0 -0 3.102</pose>
     </model>
+    <model name='building_curve_3'>
+      <static>1</static>
+      <link name='curve1'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://table_number_one/one/one.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://table_number_one/one/one.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+      </link>
+      <pose frame=''>-0.071447 -0.425975 0 0 -0 2.102</pose>
+    </model>
     <static>0</static>
     <allow_auto_disable>1</allow_auto_disable>
   </model>

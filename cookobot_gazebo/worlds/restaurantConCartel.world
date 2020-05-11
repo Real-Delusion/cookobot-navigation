@@ -2670,14 +2670,14 @@
           <visual name='visual'>
             <geometry>
               <mesh>
-                <uri>model://table_number_five/five/five.dae</uri>
+                <uri>model://cookobot_gazebo/models/table_number_five/five/five.dae</uri>
               </mesh>
             </geometry>
           </visual>
           <collision name='collision'>
             <geometry>
               <mesh>
-                <uri>model://table_number_five/five/five.dae</uri>
+                <uri>model://cookobot_gazebo/models/table_number_five/five/five.dae</uri>
               </mesh>
             </geometry>
             <max_contacts>10</max_contacts>
@@ -2706,14 +2706,14 @@
           <visual name='visual'>
             <geometry>
               <mesh>
-                <uri>model://table_number_four/four/four.dae</uri>
+                <uri>model://cookobot_gazebo/models/table_number_four/four/four.dae</uri>
               </mesh>
             </geometry>
           </visual>
           <collision name='collision'>
             <geometry>
               <mesh>
-                <uri>model://table_number_four/four/four.dae</uri>
+                <uri>model://cookobot_gazebo/models/table_number_four/four/four.dae</uri>
               </mesh>
             </geometry>
             <max_contacts>10</max_contacts>
@@ -2742,14 +2742,14 @@
           <visual name='visual'>
             <geometry>
               <mesh>
-                <uri>model://table_number_three/three/three.dae</uri>
+                <uri>model://cookobot_gazebo/models/table_number_three/three/three.dae</uri>
               </mesh>
             </geometry>
           </visual>
           <collision name='collision'>
             <geometry>
               <mesh>
-                <uri>model://table_number_three/three/three.dae</uri>
+                <uri>model://cookobot_gazebo/models/table_number_three/three/three.dae</uri>
               </mesh>
             </geometry>
             <max_contacts>10</max_contacts>
@@ -2778,14 +2778,14 @@
           <visual name='visual'>
             <geometry>
               <mesh>
-                <uri>model://table_number_two/two/two.dae</uri>
+                <uri>model://cookobot_gazebo/models/table_number_two/two/two.dae</uri>
               </mesh>
             </geometry>
           </visual>
           <collision name='collision'>
             <geometry>
               <mesh>
-                <uri>model://table_number_two/two/two.dae</uri>
+                <uri>model://cookobot_gazebo/models/table_number_two/two/two.dae</uri>
               </mesh>
             </geometry>
             <max_contacts>10</max_contacts>
