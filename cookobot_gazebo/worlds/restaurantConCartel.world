@@ -86,10 +86,10 @@
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
     <state world_name='default'>
-      <sim_time>1062 786000000</sim_time>
-      <real_time>13 454248363</real_time>
-      <wall_time>1589216674 669475558</wall_time>
-      <iterations>11623</iterations>
+      <sim_time>1093 691000000</sim_time>
+      <real_time>33 396183318</real_time>
+      <wall_time>1589218788 455380894</wall_time>
+      <iterations>30905</iterations>
       <model name='Restaurant'>
         <pose frame=''>2.75893 2.75821 0 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -173,16 +173,16 @@
             <wrench>0 0 0 0 -0 0</wrench>
           </link>
         </model>
-      </model>
-      <model name='building_curve'>
-        <pose frame=''>4.78513 3.0288 0 0 0 -1.54609</pose>
-        <scale>0.254824 0.254824 0.254824</scale>
-        <link name='curve1'>
-          <pose frame=''>4.78513 3.0288 0 0 0 -1.54609</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
+        <model name='building_curve_3'>
+          <pose frame=''>4.77241 3.07531 0 0 0 -1.57318</pose>
+          <scale>1 1 1</scale>
+          <link name='curve1'>
+            <pose frame=''>4.77241 3.07531 0 0 0 -1.57318</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+        </model>
       </model>
       <model name='cafe_table_clone_0'>
         <pose frame=''>4.67535 3.23578 0 0 -0 0</pose>
@@ -2620,49 +2620,11 @@
     </model>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose frame=''>4.37352 1.10998 5.64951 0 1.3418 1.48913</pose>
+        <pose frame=''>1.6499 -1.56033 21.4455 0 1.3418 1.48913</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
     </gui>
-    <model name='building_curve'>
-      <static>1</static>
-      <link name='curve1'>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://cookobot_gazebo/models/table_number_one/one/one.dae</uri>
-              <scale>0.254824 0.254824 0.254824</scale>
-            </mesh>
-          </geometry>
-        </visual>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <uri>model://cookobot_gazebo/models/table_number_one/one/one.dae</uri>
-              <scale>0.254824 0.254824 0.254824</scale>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>4.78513 3.0288 0 0 -0 0</pose>
-    </model>
     <model name='all_the_tables_numbers'>
       <model name='building_curve'>
         <static>1</static>
@@ -2734,7 +2696,7 @@
           <enable_wind>0</enable_wind>
           <kinematic>0</kinematic>
         </link>
-        <pose frame=''>0.242471 0.440375 -0 0 0 -1.56295</pose>
+        <pose frame=''>0.242471 0.440375 0 0 0 -1.56295</pose>
       </model>
       <model name='building_curve_1'>
         <static>1</static>
@@ -2770,7 +2732,7 @@
           <enable_wind>0</enable_wind>
           <kinematic>0</kinematic>
         </link>
-        <pose frame=''>1.39415 0.504257 -0 0 -0 3.13723</pose>
+        <pose frame=''>1.39415 0.504257 0 0 -0 3.13723</pose>
       </model>
       <model name='building_curve_2'>
         <static>1</static>
@@ -2807,6 +2769,42 @@
           <kinematic>0</kinematic>
         </link>
         <pose frame=''>-0.031447 -0.925975 0 0 -0 3.102</pose>
+      </model>
+      <model name='building_curve_3'>
+        <static>1</static>
+        <link name='curve1'>
+          <visual name='visual'>
+            <geometry>
+              <mesh>
+                <uri>model://table_number_one/one/one.dae</uri>
+              </mesh>
+            </geometry>
+          </visual>
+          <collision name='collision'>
+            <geometry>
+              <mesh>
+                <uri>model://table_number_one/one/one.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <pose frame=''>2.09834 -0.971505 0 0 0 -1.57318</pose>
       </model>
       <static>0</static>
       <allow_auto_disable>1</allow_auto_disable>

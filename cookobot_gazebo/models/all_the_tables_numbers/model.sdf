@@ -7,17 +7,33 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>model://table_number_five/five/five.dae</uri>
+              <uri>model://cookobot_gazebo/models/table_number_five/five/five.dae</uri>
             </mesh>
           </geometry>
         </visual>
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>model://table_number_five/five/five.dae</uri>
+              <uri>model://cookobot_gazebo/models/table_number_five/five/five.dae</uri>
             </mesh>
           </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
         </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
       </link>
       <pose frame=''>-1.60519 -0.018672 0 0 0 -1.5609</pose>
     </model>
@@ -27,19 +43,35 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>model://table_number_four/four/four.dae</uri>
+              <uri>model://cookobot_gazebo/models/table_number_four/four/four.dae</uri>
             </mesh>
           </geometry>
         </visual>
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>model://table_number_four/four/four.dae</uri>
+              <uri>model://cookobot_gazebo/models/table_number_four/four/four.dae</uri>
             </mesh>
           </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
         </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
       </link>
-      <pose frame=''>0.242471 0.440375 -0 0 0 -1.56295</pose>
+      <pose frame=''>0.242471 0.440375 0 0 0 -1.56295</pose>
     </model>
     <model name='building_curve_1'>
       <static>1</static>
@@ -47,19 +79,35 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>model://table_number_three/three/three.dae</uri>
+              <uri>model://cookobot_gazebo/models/table_number_three/three/three.dae</uri>
             </mesh>
           </geometry>
         </visual>
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>model://table_number_three/three/three.dae</uri>
+              <uri>model://cookobot_gazebo/models/table_number_three/three/three.dae</uri>
             </mesh>
           </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
         </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
       </link>
-      <pose frame=''>1.39415 0.504257 -0 0 -0 3.13723</pose>
+      <pose frame=''>1.39415 0.504257 0 0 -0 3.13723</pose>
     </model>
     <model name='building_curve_2'>
       <static>1</static>
@@ -67,17 +115,33 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>model://table_number_two/two/two.dae</uri>
+              <uri>model://cookobot_gazebo/models/table_number_two/two/two.dae</uri>
             </mesh>
           </geometry>
         </visual>
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>model://table_number_two/two/two.dae</uri>
+              <uri>model://cookobot_gazebo/models/table_number_two/two/two.dae</uri>
             </mesh>
           </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
         </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
       </link>
       <pose frame=''>-0.031447 -0.925975 0 0 -0 3.102</pose>
     </model>
@@ -99,7 +163,7 @@
           </geometry>
         </collision>
       </link>
-      <pose frame=''>-0.071447 -0.425975 0 0 -0 2.102</pose>
+      <pose frame=''>2.09834 -0.971505 0 0 0 -1.57318</pose>
     </model>
     <static>0</static>
     <allow_auto_disable>1</allow_auto_disable>
