@@ -178,7 +178,7 @@
     </gazebo>
 
       <gazebo reference="gripper_active_finger_link">
-        <material>Gazebo/Green</material>
+        <material>Gazebo/Grey1</material>
         <selfCollide>true</selfCollide>
         <turnGravityOff>true</turnGravityOff>
     </gazebo>
