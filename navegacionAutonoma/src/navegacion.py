@@ -37,21 +37,40 @@ waypoints = [
 # Descripcion de los estados
 # --------------------------------------------------------------------------------------------------------
 
-class PowerOnRobot(State):
-    def __init__(self):
+class PowerOnRobot(State):    
+    def __init__(self):        
         State.__init__(self, outcomes=['succeeded','aborted'])
 
     def execute(self, userdata):
+        """This is the execute method of the class PowerOnRobot
+
+        Args:
+            userdata (number): Go from the table to the one you go to 
+
+        Returns:
+            string: next state
+        """        
         rospy.loginfo("Encendiendo el Robot")
         time.sleep(2)
         return 'succeeded'
 
 
 class WaitingOrder(State):
+    """Class of state transition
+    """
+    
     def __init__(self):
         State.__init__(self, outcomes=['mesa1', 'mesa2', 'mesa3', 'mesa4', 'mesa5','cocina','aborted'], input_keys=['input'], output_keys=[''])
 
     def execute(self, userdata):
+        """This is the execute method of the class WaitiingOrder
+
+        Args:
+            userdata (number): Go from the table to the one you go to 
+
+        Returns:
+            string: next state
+        """        
         if userdata.input == 1:
             return 'mesa1'
         elif userdata.input == 2:
@@ -69,7 +88,16 @@ class WaitingOrder(State):
 
 
 class Navigate(State):
+    """Class to move the robot 
+    """    
     def __init__(self, position, orientation, place):
+        """Constructor of the Navigate class
+
+        Args:
+            position (array): Table coords
+            orientation (array): Table angle orientation
+            place (string): Name of the state 
+        """        
         State.__init__(self, outcomes=['succeeded', 'aborted'], input_keys=[''], output_keys=[''])
         self._position = position
         self._orientation = orientation
@@ -80,6 +108,14 @@ class Navigate(State):
 
 
     def execute(self, userdata):
+        """This is the execute method of the class Navigate
+
+        Args:
+            userdata (number): Go from the table to the one you go to 
+
+        Returns:
+            string: next state
+        """        
         time.sleep(2)
         goal = MoveBaseGoal()
         goal.target_pose.header.frame_id = 'map'
@@ -113,6 +149,11 @@ class main():
     
     
     def __init__(self,ordenARealizar):
+        """Constructor of the Main class
+
+        Args:
+            ordenARealizar (number): Go from the table to the one you go to 
+        """        
         
         self.ordenARealizar = ordenARealizar
 
@@ -172,6 +213,14 @@ class main():
 # Callbak servicio
 # --------------------------------------------------------------------------------------------------------
 def callbackServicio(data):
+    """Callback of the ROS service
+
+    Args:
+        data (json): JSON with message info
+
+    Returns:
+        JSON: JSON with the response of the service
+    """    
     rospy.loginfo("Se ha llamado al servicio /navegacion_autonoma_servicio")
     numeroMesaSaleccionada = data.numeroMesa
     rospy.loginfo(numeroMesaSaleccionada)
